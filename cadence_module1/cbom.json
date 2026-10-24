@@ -1,0 +1,459 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:25486fcc-b945-4aaf-ad65-eadd5db86754",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-20T15:32:14+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "CADENCE Module 1 \u2014 The Scanner",
+          "version": "2.0.0"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "demo-co"
+    }
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/0-md5",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash"
+        },
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/legacy_auth.py",
+            "line": 18
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "high"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "ast"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "medium"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Cryptographically broken hash used directly."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/1-sha1",
+      "name": "SHA1",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash"
+        },
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/legacy_auth.py",
+            "line": 23
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "high"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "ast"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "medium"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Cryptographically broken hash used directly."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/2-des",
+      "name": "DES",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "cipher"
+        },
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/legacy_auth.py",
+            "line": 28
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "high"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "ast"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "high"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Deprecated symmetric cipher."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/3-arc4",
+      "name": "ARC4",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "cipher"
+        },
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/legacy_auth.py",
+            "line": 34
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "high"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "ast"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "high"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Deprecated symmetric cipher."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/4-rsa-1024",
+      "name": "RSA-1024",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature"
+        },
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/legacy_auth.py",
+            "line": 40
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "high"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "ast"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "high"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "RSA key size 1024 < 2048-bit minimum."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/5-tlsv1",
+      "name": "TLSv1",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/legacy_auth.py",
+            "line": 45
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "high"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "ast"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "high"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Deprecated TLS/SSL protocol version."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/6-tlsv1",
+      "name": "TLSv1",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/legacy_auth.py",
+            "line": 45
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "high"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "ast"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "high"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Deprecated TLS/SSL protocol constant referenced."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/7-tlsv1.0/1.1",
+      "name": "TLSv1.0/1.1",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/gateway.conf",
+            "line": 4
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "needs_review"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "keyword"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "low"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Keyword match \u2014 not contextually verified, requires manual review."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/8-md5",
+      "name": "MD5",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/gateway.conf",
+            "line": 5
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "needs_review"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "keyword"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "low"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Keyword match \u2014 not contextually verified, requires manual review."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/9-rc4",
+      "name": "RC4",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/gateway.conf",
+            "line": 5
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "needs_review"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "keyword"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "low"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Keyword match \u2014 not contextually verified, requires manual review."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/10-sslv3",
+      "name": "SSLv3",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/gateway.conf",
+            "line": 9
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "needs_review"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "keyword"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "low"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Keyword match \u2014 not contextually verified, requires manual review."
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto-asset/11-sslv3",
+      "name": "SSLv3",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "nistQuantumSecurityStatus": "not-quantum-safe"
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/claude/build/sample_target/gateway.conf",
+            "line": 10
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "cadence:confidence",
+          "value": "needs_review"
+        },
+        {
+          "name": "cadence:detectionMethod",
+          "value": "keyword"
+        },
+        {
+          "name": "cadence:severity",
+          "value": "low"
+        },
+        {
+          "name": "cadence:notes",
+          "value": "Keyword match \u2014 not contextually verified, requires manual review."
+        }
+      ]
+    }
+  ]
+}

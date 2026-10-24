@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CADENCE Console</title>
+<meta name="description" content="Find weak cryptography, order the fixes, and migrate to post-quantum algorithms.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231C2430'/%3E%3Cpath d='M6 21h6l3-10 4 14 3-9h4' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="welcome-screen" id="welcomeScreen" aria-labelledby="welcomeTitle" aria-describedby="welcomeHint">
+  <div class="welcome-glow" aria-hidden="true"></div>
+  <div class="welcome-card">
+    <div class="welcome-brand">
+      <svg class="welcome-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="6" fill="var(--primary)"/>
+        <path d="M6 21h6l3-10 4 14 3-9h4" fill="none" stroke="var(--primary-ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>CADENCE</span>
+    </div>
+    <div class="welcome-kicker">POST-QUANTUM READINESS</div>
+    <h1 id="welcomeTitle">Move beyond<br>legacy cryptography.</h1>
+    <p class="welcome-copy">Find weak crypto. Map systems. Plan your migration.</p>
+    <button class="btn primary welcome-action" id="welcomeEnter" type="button" autofocus>
+      Open dashboard
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <p class="welcome-hint" id="welcomeHint">Enter, swipe up, or double-tap.</p>
+  </div>
+</section>
+
+<div class="shell" id="appShell" hidden inert aria-hidden="true">
+
+  <aside class="rail">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="6" fill="var(--primary)"/>
+        <path d="M6 21h6l3-10 4 14 3-9h4" fill="none" stroke="var(--primary-ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="brand-name">CADENCE</div>
+        <div class="brand-sub">Crypto migration</div>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <button data-view="overview" class="active">Overview</button>
+      <button data-view="findings">Findings <span class="count" id="navFindings"></span></button>
+      <button data-view="graph">Dependencies</button>
+      <button data-view="roadmap">Roadmap</button>
+      <button data-view="solutions">Solutions <span class="count" id="navSolutions"></span></button>
+      <button data-view="migrate">Migrate repository</button>
+    </nav>
+
+    <div class="readiness" id="readiness" style="display:none;">
+      <div class="label"><span>Plan progress</span><span id="readinessText"></span></div>
+      <div class="meter"><span id="readinessBar" style="width:0%"></span></div>
+    </div>
+
+    <div class="rail-foot">
+      <button id="historyToggle">Run history</button>
+      <button id="settingsToggle">Settings</button>
+      <button id="themeToggle">Dark theme</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1 id="pageTitle" tabindex="-1">Overview</h1>
+      <div class="scan-chip" id="scanChip" style="display:none;">
+        <span>Scan <span class="id" id="scanId"></span></span>
+        <span class="when" id="scanWhen"></span>
+        <span class="tag ok" id="scanBadge">Latest</span>
+        <button class="btn small" id="jumpToLatestBtn" style="display:none;">Back to latest</button>
+      </div>
+      <button class="btn primary" id="runScanBtn">Run scan</button>
+    </header>
+
+    <div class="scan-banner" id="scanBanner" role="status">
+      <span class="spinner"></span>
+      <strong>Scan running.</strong>
+      <span class="line" id="scanLine">Starting…</span>
+    </div>
+
+    <main class="content">
+      <section class="view active" id="view-overview"></section>
+      <section class="view" id="view-findings"></section>
+      <section class="view" id="view-graph"></section>
+      <section class="view" id="view-roadmap"></section>
+      <section class="view" id="view-solutions"></section>
+      <section class="view" id="view-migrate"></section>
+    </main>
+  </div>
+</div>
+
+<!-- Settings -->
+<div class="overlay" id="settingsOverlay">
+  <div class="drawer" role="dialog" aria-labelledby="settingsTitle">
+    <h2 id="settingsTitle">Scan settings</h2>
+    <p class="sub">Choose what this workspace should scan. Uploading a ZIP is the easiest option for most projects.</p>
+
+    <div class="source-upload-card">
+      <div class="source-upload-header">
+        <div>
+          <span class="tag accent">RECOMMENDED</span>
+          <h3>Upload your source project</h3>
+          <p>Compress your project folder into a <b>.zip</b> file, then upload it here. CADENCE scans the contents as data and never executes your code.</p>
+        </div>
+        <span class="source-upload-limit">100 MB max</span>
+      </div>
+      <div class="source-upload-steps" aria-label="Upload steps">
+        <span><b>1</b> Create a ZIP</span><span><b>2</b> Choose it below</span><span><b>3</b> Upload and save</span>
+      </div>
+      <div class="source-upload-row">
+        <input class="file-picker" type="file" id="sourceZip" accept=".zip,application/zip" aria-describedby="sourceUploadHint">
+        <button class="btn primary" type="button" id="uploadSourceBtn">Upload and use ZIP</button>
+      </div>
+      <p class="faint small" id="sourceUploadHint">Accepted format: ZIP archive. Maximum upload size: 100 MB.</p>
+      <p class="source-upload-status faint small" id="sourceUploadStatus" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="source-divider"><span>Advanced source options</span></div>
+    <div class="advanced-source">
+      <div class="field"><label for="cfgPath">Server-side source path <span class="hint">Use this only when the project folder already exists on the server</span></label>
+        <input type="text" id="cfgPath" placeholder="/srv/code"></div>
+      <p class="faint small">If you uploaded a ZIP above, CADENCE fills this path automatically. You can leave it unchanged.</p>
+    </div>
+    <div class="field"><label for="cfgGithubOrg">GitHub organisation <span class="hint">Clones and scans every repository</span></label>
+      <input type="text" id="cfgGithubOrg" placeholder="your-company"></div>
+    <div class="field"><label for="cfgGithubToken">GitHub token <span class="hint">Needed for private repositories and higher rate limits</span></label>
+      <input type="password" id="cfgGithubToken" autocomplete="off"></div>
+    <div class="field"><label for="cfgDomain">Domain <span class="hint">Only infrastructure you are authorised to test</span></label>
+      <input type="text" id="cfgDomain" placeholder="example.com"></div>
+    <div class="field"><label for="cfgProjectName">Project name</label>
+      <input type="text" id="cfgProjectName" placeholder="your-company"></div>
+
+    <hr>
+    <h3 style="margin-bottom:10px;">Planning constraints</h3>
+    <div class="field-row">
+      <div class="field"><label for="cfgTeamSize">Team size</label><input type="number" id="cfgTeamSize" min="1"></div>
+      <div class="field"><label for="cfgHorizon">Horizon (weeks)</label><input type="number" id="cfgHorizon" min="1"></div>
+    </div>
+    <div class="field"><label for="cfgBudget">Total budget <span class="hint">INR (₹)</span></label><input type="number" id="cfgBudget" min="0"></div>
+
+    <button class="btn primary" style="width:100%; justify-content:center;" id="saveSettingsBtn">Save settings</button>
+    <p class="faint small" style="margin-top:16px;">To scan on a schedule, set <code>SCAN_CRON</code> on the server (for example <code>0 3 * * *</code> for daily at 03:00).</p>
+  </div>
+</div>
+
+<!-- History -->
+<div class="overlay" id="historyOverlay">
+  <div class="drawer" role="dialog" aria-labelledby="historyTitle">
+    <h2 id="historyTitle">Run history</h2>
+    <p class="sub">Select a successful run to view that snapshot.</p>
+    <div id="historyList"></div>
+  </div>
+</div>
+
+<!-- Password -->
+<div class="overlay" id="authOverlay">
+  <div class="drawer center" role="dialog" aria-labelledby="authTitle">
+    <h2 id="authTitle">Sign in</h2>
+    <p class="sub">This console is password protected.</p>
+    <div class="field"><label for="authPasswordInput">Password</label><input type="password" id="authPasswordInput"></div>
+    <button class="btn primary" style="width:100%; justify-content:center;" id="authSubmitBtn">Unlock</button>
+    <p id="authError" style="color:var(--high); font-size:12.5px; margin-top:10px; display:none;">That password is wrong. Try again.</p>
+  </div>
+</div>
+
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+<script src="solutions.js"></script>
+<script src="migrate.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

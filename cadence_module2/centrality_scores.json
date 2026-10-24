@@ -1,0 +1,130 @@
+{
+  "Load Balancer": {
+    "degree_centrality": 0.0667,
+    "in_degree": 0,
+    "out_degree": 1,
+    "pagerank": 0.0317,
+    "criticality": "LOW",
+    "vulnerability_count": 0
+  },
+  "API Gateway": {
+    "degree_centrality": 0.6,
+    "in_degree": 4,
+    "out_degree": 5,
+    "pagerank": 0.1261,
+    "criticality": "HIGH",
+    "vulnerability_count": 5
+  },
+  "Customer Portal (Web App)": {
+    "degree_centrality": 0.0667,
+    "in_degree": 0,
+    "out_degree": 1,
+    "pagerank": 0.0317,
+    "criticality": "LOW",
+    "vulnerability_count": 0
+  },
+  "Admin Dashboard": {
+    "degree_centrality": 0.0667,
+    "in_degree": 0,
+    "out_degree": 1,
+    "pagerank": 0.0317,
+    "criticality": "LOW",
+    "vulnerability_count": 0
+  },
+  "Legacy Auth Service": {
+    "degree_centrality": 0.2,
+    "in_degree": 2,
+    "out_degree": 1,
+    "pagerank": 0.0667,
+    "criticality": "HIGH",
+    "vulnerability_count": 7
+  },
+  "Order Service": {
+    "degree_centrality": 0.2667,
+    "in_degree": 1,
+    "out_degree": 3,
+    "pagerank": 0.0532,
+    "criticality": "MEDIUM",
+    "vulnerability_count": 0
+  },
+  "Payment Service": {
+    "degree_centrality": 0.2667,
+    "in_degree": 1,
+    "out_degree": 3,
+    "pagerank": 0.0532,
+    "criticality": "MEDIUM",
+    "vulnerability_count": 0
+  },
+  "Inventory Service": {
+    "degree_centrality": 0.2,
+    "in_degree": 2,
+    "out_degree": 1,
+    "pagerank": 0.0682,
+    "criticality": "MEDIUM",
+    "vulnerability_count": 0
+  },
+  "Notification Service": {
+    "degree_centrality": 0.1333,
+    "in_degree": 1,
+    "out_degree": 1,
+    "pagerank": 0.0532,
+    "criticality": "MEDIUM",
+    "vulnerability_count": 0
+  },
+  "Reporting Service": {
+    "degree_centrality": 0.2,
+    "in_degree": 0,
+    "out_degree": 3,
+    "pagerank": 0.0317,
+    "criticality": "LOW",
+    "vulnerability_count": 0
+  },
+  "User Database": {
+    "degree_centrality": 0.2,
+    "in_degree": 3,
+    "out_degree": 0,
+    "pagerank": 0.1124,
+    "criticality": "HIGH",
+    "vulnerability_count": 0
+  },
+  "Payment Database": {
+    "degree_centrality": 0.1333,
+    "in_degree": 2,
+    "out_degree": 0,
+    "pagerank": 0.0558,
+    "criticality": "MEDIUM",
+    "vulnerability_count": 0
+  },
+  "Analytics Database": {
+    "degree_centrality": 0.1333,
+    "in_degree": 2,
+    "out_degree": 0,
+    "pagerank": 0.0987,
+    "criticality": "HIGH",
+    "vulnerability_count": 0
+  },
+  "Message Queue (Kafka)": {
+    "degree_centrality": 0.2,
+    "in_degree": 3,
+    "out_degree": 0,
+    "pagerank": 0.1071,
+    "criticality": "HIGH",
+    "vulnerability_count": 0
+  },
+  "Third-Party Billing Integration": {
+    "degree_centrality": 0.0667,
+    "in_degree": 1,
+    "out_degree": 0,
+    "pagerank": 0.0468,
+    "criticality": "MEDIUM",
+    "vulnerability_count": 0
+  },
+  "CI/CD Pipeline Server": {
+    "degree_centrality": 0.1333,
+    "in_degree": 0,
+    "out_degree": 2,
+    "pagerank": 0.0317,
+    "criticality": "LOW",
+    "vulnerability_count": 0
+  }
+}

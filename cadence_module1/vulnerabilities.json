@@ -1,0 +1,110 @@
+[
+  {
+    "algorithm": "MD5",
+    "type": "algorithm",
+    "file": "/home/claude/build/sample_target/legacy_auth.py",
+    "line": 18,
+    "confidence": "high",
+    "detection_method": "ast",
+    "severity": "medium"
+  },
+  {
+    "algorithm": "SHA1",
+    "type": "algorithm",
+    "file": "/home/claude/build/sample_target/legacy_auth.py",
+    "line": 23,
+    "confidence": "high",
+    "detection_method": "ast",
+    "severity": "medium"
+  },
+  {
+    "algorithm": "DES",
+    "type": "algorithm",
+    "file": "/home/claude/build/sample_target/legacy_auth.py",
+    "line": 28,
+    "confidence": "high",
+    "detection_method": "ast",
+    "severity": "high"
+  },
+  {
+    "algorithm": "ARC4",
+    "type": "algorithm",
+    "file": "/home/claude/build/sample_target/legacy_auth.py",
+    "line": 34,
+    "confidence": "high",
+    "detection_method": "ast",
+    "severity": "high"
+  },
+  {
+    "algorithm": "RSA-1024",
+    "type": "algorithm",
+    "file": "/home/claude/build/sample_target/legacy_auth.py",
+    "line": 40,
+    "confidence": "high",
+    "detection_method": "ast",
+    "severity": "high"
+  },
+  {
+    "algorithm": "TLSv1",
+    "type": "protocol",
+    "file": "/home/claude/build/sample_target/legacy_auth.py",
+    "line": 45,
+    "confidence": "high",
+    "detection_method": "ast",
+    "severity": "high"
+  },
+  {
+    "algorithm": "TLSv1",
+    "type": "protocol",
+    "file": "/home/claude/build/sample_target/legacy_auth.py",
+    "line": 45,
+    "confidence": "high",
+    "detection_method": "ast",
+    "severity": "high"
+  },
+  {
+    "algorithm": "TLSv1.0/1.1",
+    "type": "protocol",
+    "file": "/home/claude/build/sample_target/gateway.conf",
+    "line": 4,
+    "confidence": "needs_review",
+    "detection_method": "keyword",
+    "severity": "low"
+  },
+  {
+    "algorithm": "MD5",
+    "type": "algorithm",
+    "file": "/home/claude/build/sample_target/gateway.conf",
+    "line": 5,
+    "confidence": "needs_review",
+    "detection_method": "keyword",
+    "severity": "low"
+  },
+  {
+    "algorithm": "RC4",
+    "type": "algorithm",
+    "file": "/home/claude/build/sample_target/gateway.conf",
+    "line": 5,
+    "confidence": "needs_review",
+    "detection_method": "keyword",
+    "severity": "low"
+  },
+  {
+    "algorithm": "SSLv3",
+    "type": "protocol",
+    "file": "/home/claude/build/sample_target/gateway.conf",
+    "line": 9,
+    "confidence": "needs_review",
+    "detection_method": "keyword",
+    "severity": "low"
+  },
+  {
+    "algorithm": "SSLv3",
+    "type": "protocol",
+    "file": "/home/claude/build/sample_target/gateway.conf",
+    "line": 10,
+    "confidence": "needs_review",
+    "detection_method": "keyword",
+    "severity": "low"
+  }
+]

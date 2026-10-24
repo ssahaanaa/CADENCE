@@ -1,0 +1,239 @@
+{
+  "generated_at": "2026-09-20T15:32:36.612713+00:00",
+  "nodes": [
+    {
+      "id": "Load Balancer",
+      "degree_centrality": 0.0667,
+      "in_degree": 0,
+      "out_degree": 1,
+      "pagerank": 0.0317,
+      "criticality": "LOW",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "API Gateway",
+      "degree_centrality": 0.6,
+      "in_degree": 4,
+      "out_degree": 5,
+      "pagerank": 0.1261,
+      "criticality": "HIGH",
+      "vulnerability_count": 5
+    },
+    {
+      "id": "Customer Portal (Web App)",
+      "degree_centrality": 0.0667,
+      "in_degree": 0,
+      "out_degree": 1,
+      "pagerank": 0.0317,
+      "criticality": "LOW",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Admin Dashboard",
+      "degree_centrality": 0.0667,
+      "in_degree": 0,
+      "out_degree": 1,
+      "pagerank": 0.0317,
+      "criticality": "LOW",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Legacy Auth Service",
+      "degree_centrality": 0.2,
+      "in_degree": 2,
+      "out_degree": 1,
+      "pagerank": 0.0667,
+      "criticality": "HIGH",
+      "vulnerability_count": 7
+    },
+    {
+      "id": "Order Service",
+      "degree_centrality": 0.2667,
+      "in_degree": 1,
+      "out_degree": 3,
+      "pagerank": 0.0532,
+      "criticality": "MEDIUM",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Payment Service",
+      "degree_centrality": 0.2667,
+      "in_degree": 1,
+      "out_degree": 3,
+      "pagerank": 0.0532,
+      "criticality": "MEDIUM",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Inventory Service",
+      "degree_centrality": 0.2,
+      "in_degree": 2,
+      "out_degree": 1,
+      "pagerank": 0.0682,
+      "criticality": "MEDIUM",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Notification Service",
+      "degree_centrality": 0.1333,
+      "in_degree": 1,
+      "out_degree": 1,
+      "pagerank": 0.0532,
+      "criticality": "MEDIUM",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Reporting Service",
+      "degree_centrality": 0.2,
+      "in_degree": 0,
+      "out_degree": 3,
+      "pagerank": 0.0317,
+      "criticality": "LOW",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "User Database",
+      "degree_centrality": 0.2,
+      "in_degree": 3,
+      "out_degree": 0,
+      "pagerank": 0.1124,
+      "criticality": "HIGH",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Payment Database",
+      "degree_centrality": 0.1333,
+      "in_degree": 2,
+      "out_degree": 0,
+      "pagerank": 0.0558,
+      "criticality": "MEDIUM",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Analytics Database",
+      "degree_centrality": 0.1333,
+      "in_degree": 2,
+      "out_degree": 0,
+      "pagerank": 0.0987,
+      "criticality": "HIGH",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Message Queue (Kafka)",
+      "degree_centrality": 0.2,
+      "in_degree": 3,
+      "out_degree": 0,
+      "pagerank": 0.1071,
+      "criticality": "HIGH",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "Third-Party Billing Integration",
+      "degree_centrality": 0.0667,
+      "in_degree": 1,
+      "out_degree": 0,
+      "pagerank": 0.0468,
+      "criticality": "MEDIUM",
+      "vulnerability_count": 0
+    },
+    {
+      "id": "CI/CD Pipeline Server",
+      "degree_centrality": 0.1333,
+      "in_degree": 0,
+      "out_degree": 2,
+      "pagerank": 0.0317,
+      "criticality": "LOW",
+      "vulnerability_count": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": "Load Balancer",
+      "target": "API Gateway"
+    },
+    {
+      "source": "API Gateway",
+      "target": "Legacy Auth Service"
+    },
+    {
+      "source": "API Gateway",
+      "target": "Order Service"
+    },
+    {
+      "source": "API Gateway",
+      "target": "Payment Service"
+    },
+    {
+      "source": "API Gateway",
+      "target": "Inventory Service"
+    },
+    {
+      "source": "API Gateway",
+      "target": "Notification Service"
+    },
+    {
+      "source": "Customer Portal (Web App)",
+      "target": "API Gateway"
+    },
+    {
+      "source": "Admin Dashboard",
+      "target": "API Gateway"
+    },
+    {
+      "source": "Legacy Auth Service",
+      "target": "User Database"
+    },
+    {
+      "source": "Order Service",
+      "target": "User Database"
+    },
+    {
+      "source": "Order Service",
+      "target": "Inventory Service"
+    },
+    {
+      "source": "Order Service",
+      "target": "Message Queue (Kafka)"
+    },
+    {
+      "source": "Payment Service",
+      "target": "Payment Database"
+    },
+    {
+      "source": "Payment Service",
+      "target": "Third-Party Billing Integration"
+    },
+    {
+      "source": "Payment Service",
+      "target": "Message Queue (Kafka)"
+    },
+    {
+      "source": "Inventory Service",
+      "target": "Analytics Database"
+    },
+    {
+      "source": "Notification Service",
+      "target": "Message Queue (Kafka)"
+    },
+    {
+      "source": "Reporting Service",
+      "target": "Analytics Database"
+    },
+    {
+      "source": "Reporting Service",
+      "target": "User Database"
+    },
+    {
+      "source": "Reporting Service",
+      "target": "Payment Database"
+    },
+    {
+      "source": "CI/CD Pipeline Server",
+      "target": "API Gateway"
+    },
+    {
+      "source": "CI/CD Pipeline Server",
+      "target": "Legacy Auth Service"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "_comment": "Regression-test fixture for the checked-in sample dependency graph. Live runs regenerate this map from exact Module 1 file paths in Module 2; do not treat these names as real system metadata.",
+
+  "/home/claude/build/sample_target/legacy_auth.py": "Legacy Auth Service",
+  "/home/claude/build/sample_target/gateway.conf": "API Gateway"
+}

@@ -1,0 +1,15 @@
+{
+  "team_size": 4,
+  "planning_horizon_weeks": 10,
+  "total_budget": 7744000,
+  "cost_per_engineer_week": 387200,
+  "currency": "INR",
+  "weights": {
+    "risk": 0.4,
+    "dependency": 0.3,
+    "compliance": 0.2,
+    "cost": 0.1
+  },
+  "compliance_deadlines": {},
+  "enforce_dependency_precedence": true
+}

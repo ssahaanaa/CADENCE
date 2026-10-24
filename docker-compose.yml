@@ -1,0 +1,22 @@
+services:
+  cadence:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Shared password gating the whole console. Strongly recommended
+      # once this is reachable by anyone other than you.
+      APP_PASSWORD: "${APP_PASSWORD:-}"
+      # Optional: run a scan automatically on a schedule (5-field cron).
+      # Example below: every day at 03:00 server time.
+      SCAN_CRON: "${SCAN_CRON:-}"
+    volumes:
+      # Run history + scan config survive container restarts/rebuilds.
+      - cadence_data:/app/backend/data
+      # If you're scanning a local codebase, mount it read-only and point
+      # Settings -> Source path at its path *inside* the container, e.g. /srv/code.
+      # - /path/to/your/codebase:/srv/code:ro
+    restart: unless-stopped
+
+volumes:
+  cadence_data:

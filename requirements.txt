@@ -1,0 +1,24 @@
+# --- backend web app ---
+fastapi>=0.111
+uvicorn[standard]>=0.30
+apscheduler>=3.10
+pydantic>=2.6
+
+# --- Module 1: scanner ---
+cryptography
+pycryptodome
+tree-sitter
+tree-sitter-java
+tree-sitter-javascript
+
+# --- Module 2: dependency graph ---
+networkx
+scipy
+pyvis
+pandas
+
+# --- Module 3: decision engine ---
+numpy>=1.24
+pulp>=2.7,<4
+
+python-multipart>=0.0.9

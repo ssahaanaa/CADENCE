@@ -1,0 +1,5 @@
+cryptography
+pycryptodome
+tree-sitter
+tree-sitter-java
+tree-sitter-javascript
